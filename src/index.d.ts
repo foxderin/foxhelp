@@ -1,0 +1,45 @@
+import { Computed, Context, Schema, Session } from "koishi";
+declare module "koishi" {
+    interface Events {
+        "help/command"(output: string[], command: Command, session: Session<never, never>): void;
+        "help/option"(output: string, option: Argv.OptionVariant, command: Command, session: Session<never, never>): string;
+    }
+    namespace Command {
+        interface Config {
+            /** hide all options by default */
+            hideOptions?: boolean;
+            /** hide command */
+            hidden?: Computed<boolean>;
+            /** localization params */
+            params?: object;
+        }
+    }
+    namespace Argv {
+        interface OptionConfig {
+            /** hide option */
+            hidden?: Computed<boolean>;
+            /** localization params */
+            params?: object;
+        }
+    }
+}
+export interface Config {
+    shortcut?: boolean;
+    options?: boolean;
+    customImage?: string;
+    imageSuffix?: string;
+    inviteGroup?: string;
+    feedback?: boolean;
+    formatters?: {
+        title?: string;
+        description?: string;
+        aliases?: string;
+        usage?: string;
+        options?: string;
+        examples?: string;
+        subcommands?: string;
+    };
+}
+export declare const Config: Schema<Config>;
+export declare const name = "help";
+export declare function apply(ctx: Context, config: Config): void;

@@ -1,0 +1,77 @@
+{
+  "name": "@foxderin/koishi-plugin-foxhelp",
+  "description": "Enhanced Help plugin for Koishi with advanced features",
+  "version": "1.1.2",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "foxderin <admin@glassfoxowo.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/foxderin/foxhelp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foxderin/foxhelp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/foxderin/foxhelp/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src --ext .ts",
+    "test": "mocha tests/**/*.spec.ts",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf lib",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "bot",
+    "chatbot",
+    "koishi",
+    "plugin",
+    "help",
+    "enhanced",
+    "customizable",
+    "pagination",
+    "cache",
+    "feedback"
+  ],
+  "koishi": {
+    "browser": true,
+    "category": "tool",
+    "description": {
+      "en": "Enhanced help plugin with custom formats, images, feedback system, and advanced features",
+      "zh": "增强版帮助插件，支持自定义格式、图片、反馈系统等高级功能"
+    },
+    "locales": [
+      "zh",
+      "en",
+      "ja",
+      "fr",
+      "zh-TW"
+    ]
+  },
+  "peerDependencies": {
+    "koishi": "^4.18.7"
+  },
+  "devDependencies": {
+    "@koishijs/plugin-mock": "^2.6.6",
+    "@minatojs/driver-memory": "^3.6.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "koishi": "^4.18.7",
+    "minato": "^3.6.1",
+    "mocha": "^10.0.0",
+    "typescript": "^5.0.0",
+    "yml-register": "^1.2.5"
+  }
+}
