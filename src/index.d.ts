@@ -1,8 +1,8 @@
-import { Computed, Context, Schema, Session } from "koishi";
-declare module "koishi" {
+import { Computed, Context, Schema, Session } from 'koishi';
+declare module 'koishi' {
     interface Events {
-        "help/command"(output: string[], command: Command, session: Session<never, never>): void;
-        "help/option"(output: string, option: Argv.OptionVariant, command: Command, session: Session<never, never>): string;
+        'foxhelp/command'(output: string[], command: Command, session: Session<never, never>): void;
+        'foxhelp/option'(output: string, option: Argv.OptionVariant, command: Command, session: Session<never, never>): string;
     }
     namespace Command {
         interface Config {
@@ -30,6 +30,11 @@ export interface Config {
     imageSuffix?: string;
     inviteGroup?: string;
     feedback?: boolean;
+    pagination?: {
+        enabled?: boolean;
+        pageSize?: number;
+    };
+    statistics?: boolean;
     formatters?: {
         title?: string;
         description?: string;
@@ -38,8 +43,9 @@ export interface Config {
         options?: string;
         examples?: string;
         subcommands?: string;
+        footer?: string;
     };
 }
 export declare const Config: Schema<Config>;
-export declare const name = "help";
+export declare const name = "foxhelp";
 export declare function apply(ctx: Context, config: Config): void;

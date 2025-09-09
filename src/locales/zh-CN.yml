@@ -1,8 +1,8 @@
 commands:
-  help:
+  foxhelp:
     description: 显示帮助信息
     shortcuts:
-      help: 帮助
+      foxhelp: 帮助
     options:
       help: 显示此信息
       authority: 显示权限设置
@@ -17,6 +17,14 @@ commands:
       command-authority: 最低权限：{0} 级。
       subcommand-prolog: 可用的子指令有{0}：
       global-prolog: 当前可用的指令有{0}：
-      global-epilog: 输入“{0}help 指令名”查看特定指令的语法和使用示例。
+      global-epilog: 输入“{0}foxhelp 指令名”查看特定指令的语法和使用示例。
       available-options: 可用的选项有：
       available-options-with-authority: 可用的选项有（括号内为额外要求的权限等级）：
+      statistics: 📊 统计信息：总使用次数 {0}，涉及指令 {1} 个
+      pagination-info: 第 {0}/{1} 页，共 {2} 个指令
+      prev-page: 上一页({0})
+      next-page: 下一页({0})
+      navigation: 导航：{0}
+      feedback-prompt: 💬 如有问题或建议，欢迎反馈！
+      feedback-group: 📢 加入反馈群：{0}
+      invite-group: 🎉 加入我们的群组：{0}

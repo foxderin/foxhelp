@@ -1,7 +1,7 @@
 {
-  "name": "@foxderin/koishi-plugin-foxhelp",
-  "description": "Enhanced Help plugin for Koishi with advanced features",
-  "version": "1.1.2",
+  "name": "foxhelp",
+  "description": "Enhanced Help plugin for Koishi with advanced features: custom formatting, images, feedback system, statistics, pagination and more",
+  "version": "0.0.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -37,12 +37,14 @@
     "chatbot",
     "koishi",
     "plugin",
-    "help",
     "enhanced",
     "customizable",
     "pagination",
-    "cache",
-    "feedback"
+    "statistics",
+    "feedback",
+    "formatting",
+    "templates",
+    "multilingual"
   ],
   "koishi": {
     "browser": true,

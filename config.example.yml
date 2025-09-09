@@ -1,0 +1,42 @@
+# FoxHelp 插件配置示例
+
+# 这是一个完整的配置示例，展示了 FoxHelp 插件的所有可用选项
+
+foxhelp:
+  # 基础功能配置
+  shortcut: true          # 启用快捷调用 'foxhelp'
+  options: true           # 为每个命令添加 -h, --help 选项
+  
+  # 图片和视觉效果
+  customImage: "https://example.com/bot-avatar.png"  # 自定义帮助图片
+  imageSuffix: "🦊 FoxBot 为您服务！"               # 图片下方显示的文本
+  
+  # 反馈和社交功能
+  feedback: true          # 启用反馈功能
+  inviteGroup: "https://qm.qq.com/cgi-bin/qm/qr?k=example"  # QQ群邀请链接
+  
+  # 统计功能
+  statistics: true        # 显示使用统计信息
+  
+  # 分页配置
+  pagination:
+    enabled: true         # 启用分页
+    pageSize: 8           # 每页显示8个命令
+  
+  # 自定义格式化模板
+  formatters:
+    title: "🎯 {content}"
+    description: "📝 {content}"
+    aliases: "🔗 别名：{content}"
+    usage: "💡 使用方法：\n{content}"
+    options: "⚙️ 可用选项：\n{content}"
+    examples: "📋 使用示例：\n{content}"
+    subcommands: "📂 子命令列表：\n{content}"
+    footer: "⏰ 帮助生成时间：{time} | 🦊 FoxBot"
+
+# 使用示例：
+# 1. 基本帮助：发送 "foxhelp" 或 "帮助"
+# 2. 命令帮助：发送 "foxhelp echo" 查看 echo 命令帮助
+# 3. 分页浏览：发送 "foxhelp -p 2" 查看第2页命令
+# 4. 显示隐藏：发送 "foxhelp -H" 查看隐藏命令
+# 5. 获取反馈：发送 "foxhelp -f" 查看反馈信息
